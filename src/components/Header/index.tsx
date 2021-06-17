@@ -346,9 +346,6 @@ export default function Header() {
         >
           <Trans>Pool</Trans>
         </StyledNavLink>
-        <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
-          <Trans>Vote</Trans>
-        </StyledNavLink>
         <StyledExternalLink id={`stake-nav-link`} href={'https://info.uniswap.org'}>
           <Trans>Charts</Trans>
           <sup>↗</sup>
