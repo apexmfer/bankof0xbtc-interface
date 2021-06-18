@@ -1,5 +1,6 @@
 // used to mark unsupported tokens, these are hosted lists of unsupported tokens
 
+const BIRB_LIST = 'https://gateway.pinata.cloud/ipfs/Qmapg1mSG53hFvGUcdhWdQfbjMjoPveiNrM6uM3Rbjoiwf'
 const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
 const UMA_LIST = 'https://umaproject.org/uma.tokenlist.json'
 const AAVE_LIST = 'tokenlist.aave.eth'
@@ -32,8 +33,9 @@ export const DEFAULT_LIST_OF_LISTS: string[] = [
   CMC_STABLECOIN,
   KLEROS_LIST,
   GEMINI_LIST,
+  BIRB_LIST,
   ...UNSUPPORTED_LIST_URLS, // need to load unsupported tokens as well
 ]
 
 // default lists to be 'active' aka searched across
-export const DEFAULT_ACTIVE_LIST_URLS: string[] = [GEMINI_LIST]
+export const DEFAULT_ACTIVE_LIST_URLS: string[] = [BIRB_LIST]

@@ -18,6 +18,19 @@ yarn i18n:extract
 yarn start
 ```
 
+
+
+## BIRBSWAP TODO 
+1) build a birbswap tokenlist and upload it to IPFS 
+2) make it the default tokenlist 
+3) 
+
+
+
+Editing lists is in 'constants/lists.ts ' 
+
+
+
 # Contributing
 
 Thank you for your interest in contributing to the Uniswap interface! 🦄

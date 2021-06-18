@@ -17,6 +17,8 @@ import {
   USDT,
   UST,
   WBTC,
+  ZXBTC,
+  BIRB,
   ETH2X_FLI,
   WETH9_EXTENDED,
 } from './tokens'
@@ -61,7 +63,7 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [1]: [...WETH_ONLY[1], DAI, USDC, USDT, WBTC],
+  [1]: [...WETH_ONLY[1], DAI, USDC, USDT, WBTC, ZXBTC, BIRB],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [1]: {
@@ -77,6 +79,7 @@ export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: To
     [FRAX.address]: [FXS],
     [FXS.address]: [FRAX],
     [WBTC.address]: [renBTC],
+    [ZXBTC.address]: [BIRB],
     [renBTC.address]: [WBTC],
   },
 }
@@ -94,7 +97,7 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainCurrencyList = {
-  [1]: [ExtendedEther.onChain(1), DAI, USDC, USDT, WBTC, WETH9_EXTENDED[1]],
+  [1]: [ExtendedEther.onChain(1), DAI, USDC, WETH9_EXTENDED[1], BIRB, ZXBTC],
   [3]: [ExtendedEther.onChain(3), WETH9_EXTENDED[3]],
   [4]: [ExtendedEther.onChain(4), WETH9_EXTENDED[4]],
   [5]: [ExtendedEther.onChain(5), WETH9_EXTENDED[5]],
@@ -112,7 +115,7 @@ export const COMMON_BASES: ChainCurrencyList = {
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [1]: [...WETH_ONLY[1], DAI, USDC, USDT, WBTC],
+  [1]: [...WETH_ONLY[1], DAI, USDC, USDT, ZXBTC, BIRB],
 }
 export const PINNED_PAIRS: { readonly [chainId: number]: [Token, Token][] } = {
   [1]: [
@@ -122,5 +125,6 @@ export const PINNED_PAIRS: { readonly [chainId: number]: [Token, Token][] } = {
     ],
     [USDC, USDT],
     [DAI, USDT],
+    [ZXBTC, BIRB],
   ],
 }
