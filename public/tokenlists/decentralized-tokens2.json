@@ -30,7 +30,7 @@
         "decimals": 8,
         "logoURI": "ipfs://QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB",
         "tags": [
-          "decentralized"
+          "neutral"
         ]
       },
       {
@@ -41,46 +41,13 @@
         "decimals": 8,
         "logoURI": "ipfs://QmRSHPBUVAPjaEpNhjiicfaGb1w5rKsAq7McPkmd61VhKq",
         "tags": [
-          "mineable"
-        ]
-      },
-      {
-        "chainId": 1,
-        "address": "0x2bf91c18cd4ae9c2f2858ef9fe518180f7b5096d",
-        "symbol": "KIWI",
-        "name": "KIWI Token",
-        "decimals": 8,
-        "logoURI": "ipfs://QmRSHPBUVAPjaEpNhjiicfaGb1w5rKsAq7McPkmd61VhKq",
-        "tags": [
-          "mineable"
-        ]
-      },
-      {
-        "chainId": 1,
-        "address": "0x26946ada5ecb57f3a1f91605050ce45c482c9eb1",
-        "symbol": "BSOV",
-        "name": "BSOV Token",
-        "decimals": 8,
-        "logoURI": "ipfs://QmRSHPBUVAPjaEpNhjiicfaGb1w5rKsAq7McPkmd61VhKq",
-        "tags": [
-          "mineable"
-        ]
-      },
-      {
-        "chainId": 1,
-        "address": "0x4ba6ddd7b89ed838fed25d208d4f644106e34279",
-        "symbol": "VETH",
-        "name": "Vether",
-        "decimals": 18,
-        "logoURI": "ipfs://QmRSHPBUVAPjaEpNhjiicfaGb1w5rKsAq7McPkmd61VhKq",
-        "tags": [
-          "neutral"
+          "mineable","neutral"
         ]
       }
     ],
     "version": {
       "major": 1,
-      "minor": 2,
+      "minor": 0,
       "patch": 0
     }
   }

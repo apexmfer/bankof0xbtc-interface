@@ -1,6 +1,6 @@
 // used to mark unsupported tokens, these are hosted lists of unsupported tokens
 
-const BIRB_LIST = 'https://gateway.pinata.cloud/ipfs/Qmapg1mSG53hFvGUcdhWdQfbjMjoPveiNrM6uM3Rbjoiwf'
+const BIRB_LIST = 'https://gateway.pinata.cloud/ipfs/QmUzqasKre5PMe2gAvnzy7dPSkbckF9wFf4dU9z1GfMWJb'
 const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
 const UMA_LIST = 'https://umaproject.org/uma.tokenlist.json'
 const AAVE_LIST = 'tokenlist.aave.eth'
