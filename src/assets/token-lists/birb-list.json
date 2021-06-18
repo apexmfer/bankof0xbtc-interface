@@ -1,50 +1,41 @@
-
 {
-    "name": "Birb Tokens List",
-    "logoURI": "ipfs://QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB",
-    "keywords": [
-      "audited",
-      "mineable",
-      "special tokens"
-    ],
-    "tags": {
-      "mineable": {
-        "name": "Mineable",
-        "description": "Tokens that are pure mined using Proof of Work"
-      },
-      "atomic": {
-        "name": "Atomic",
-        "description": "Tokens that are fixed to an internal Ethereum asset"
-      }
+  "name": "Birb Tokens List",
+  "logoURI": "ipfs://QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB",
+  "keywords": ["audited", "mineable", "special tokens"],
+  "tags": {
+    "mineable": {
+      "name": "Mineable",
+      "description": "Tokens that are pure mined using Proof of Work"
     },
-    "timestamp": "2020-06-12T00:00:00+00:00",
-    "tokens": [
-      {
-        "chainId": 1,
-        "address": "0x216d7636b791Ed93BFD56BF696b35A14115416ab",
-        "symbol": "BRB",
-        "name": "BIRB Token",
-        "decimals": 8,
-        "logoURI": "ipfs://QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB",
-        "tags": [
-          "atomic"
-        ]
-      },
-      {
-        "chainId": 1,
-        "address": "0xb6ed7644c69416d67b522e20bc294a9a9b405b31",
-        "symbol": "0xBTC",
-        "name": "0xBitcoin",
-        "decimals": 8,
-        "logoURI": "ipfs://QmRSHPBUVAPjaEpNhjiicfaGb1w5rKsAq7McPkmd61VhKq",
-        "tags": [
-          "mineable"
-        ]
-      }
-    ],
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "patch": 0
+    "atomic": {
+      "name": "Atomic",
+      "description": "Tokens that are fixed to an internal Ethereum asset"
     }
+  },
+  "timestamp": "2020-06-12T00:00:00+00:00",
+  "tokens": [
+    {
+      "chainId": 1,
+      "address": "0x216d7636b791Ed93BFD56BF696b35A14115416ab",
+      "symbol": "BRB",
+      "name": "BIRB Token",
+      "decimals": 8,
+      "logoURI": "ipfs://QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB",
+      "tags": ["atomic"]
+    },
+    {
+      "chainId": 1,
+      "address": "0xb6ed7644c69416d67b522e20bc294a9a9b405b31",
+      "symbol": "0xBTC",
+      "name": "0xBitcoin",
+      "decimals": 8,
+      "logoURI": "ipfs://QmRSHPBUVAPjaEpNhjiicfaGb1w5rKsAq7McPkmd61VhKq",
+      "tags": ["mineable"]
+    }
+  ],
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
   }
+}
