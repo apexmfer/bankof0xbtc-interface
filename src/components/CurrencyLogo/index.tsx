@@ -6,8 +6,12 @@ import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
-export const getTokenLogoURL = (address: string) =>
-  `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
+export const getTokenLogoURL = (address: string) => {
+  if (address == '0x216d7636b791Ed93BFD56BF696b35A14115416ab') {
+    return 'https://gateway.pinata.cloud/ipfs/QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB'
+  }
+  return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
+}
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};
