@@ -4,30 +4,15 @@ import styled from 'styled-components/macro'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import { UNI } from '../../constants/tokens'
 import { ExternalLink, TYPE } from '../../theme'
-import { RowBetween, RowFixed } from '../../components/Row'
-import { Link } from 'react-router-dom'
-import { getExplorerLink, ExplorerDataType } from '../../utils/getExplorerLink'
-import { ProposalStatus } from './styled'
-import { ButtonPrimary } from '../../components/Button'
-import { Button } from 'rebass/styled-components'
-import { darken } from 'polished'
+import { RowBetween } from '../../components/Row'
 import { CardBGImage, CardNoise, CardSection, DataCard } from '../../components/earn/styled'
-import {
-  ProposalData,
-  ProposalState,
-  useAllProposalData,
-  useUserDelegatee,
-  useUserVotes,
-} from '../../state/governance/hooks'
+import { useUserDelegatee } from '../../state/governance/hooks'
 import DelegateModal from '../../components/vote/DelegateModal'
 import { useTokenBalance } from '../../state/wallet/hooks'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { ZERO_ADDRESS } from '../../constants/misc'
 import { Token, CurrencyAmount } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
-import { shortenAddress } from '../../utils'
-import Loader from '../../components/Loader'
-import FormattedCurrencyAmount from '../../components/FormattedCurrencyAmount'
 import { useModalOpen, useToggleDelegateModal } from '../../state/application/hooks'
 import { ApplicationModal } from '../../state/application/actions'
 import { Trans } from '@lingui/macro'
@@ -39,77 +24,9 @@ const TopSection = styled(AutoColumn)`
   width: 100%;
 `
 
-const Proposal = styled(Button)`
-  padding: 0.75rem 1rem;
-  width: 100%;
-  margin-top: 1rem;
-  border-radius: 12px;
-  display: grid;
-  grid-template-columns: 48px 1fr 120px;
-  align-items: center;
-  text-align: left;
-  outline: none;
-  cursor: pointer;
-  color: ${({ theme }) => theme.text1};
-  text-decoration: none;
-  background-color: ${({ theme }) => theme.bg1};
-  &:focus {
-    background-color: ${({ theme }) => darken(0.05, theme.bg1)};
-  }
-  &:hover {
-    background-color: ${({ theme }) => darken(0.05, theme.bg1)};
-  }
-`
-
-const ProposalNumber = styled.span`
-  opacity: 0.6;
-`
-
-const ProposalTitle = styled.span`
-  font-weight: 600;
-`
-
 const VoteCard = styled(DataCard)`
   background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
   overflow: hidden;
-`
-
-const WrapSmall = styled(RowBetween)`
-  margin-bottom: 1rem;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    flex-wrap: wrap;
-  `};
-`
-
-const TextButton = styled(TYPE.main)`
-  color: ${({ theme }) => theme.primary1};
-  :hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-`
-
-const AddressButton = styled.div`
-  border: 1px solid ${({ theme }) => theme.bg3};
-  padding: 2px 4px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const StyledExternalLink = styled(ExternalLink)`
-  color: ${({ theme }) => theme.text1};
-`
-
-const EmptyProposals = styled.div`
-  border: 1px solid ${({ theme }) => theme.text4};
-  padding: 16px 12px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `
 
 export default function Vote() {
@@ -119,11 +36,6 @@ export default function Vote() {
   const showDelegateModal = useModalOpen(ApplicationModal.DELEGATE)
   const toggleDelegateModal = useToggleDelegateModal()
 
-  // get data to list all proposals
-  const allProposals: ProposalData[] = useAllProposalData()
-
-  // user data
-  const availableVotes: CurrencyAmount<Token> | undefined = useUserVotes()
   const uniBalance: CurrencyAmount<Token> | undefined = useTokenBalance(
     account ?? undefined,
     chainId ? UNI[chainId] : undefined
