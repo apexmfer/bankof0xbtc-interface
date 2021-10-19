@@ -15148,10 +15148,9 @@ polished@^3.3.2:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-polyfill-object.fromentries@^1.0.1:
+"polyfill-object.fromentries@git+https://gitlab.com/moongoal/js-polyfill-object.fromentries.git":
   version "1.0.1"
-  resolved "https://registry.nlark.com/polyfill-object.fromentries/download/polyfill-object.fromentries-1.0.1.tgz#1a5d89e3777684a852c9b6a6a1d2c3f9c262fc86"
-  integrity sha1-Gl2J43d2hKhSybamodLD+cJi/IY=
+  resolved "git+https://gitlab.com/moongoal/js-polyfill-object.fromentries.git#aa08686f02518d87b946e3fbda8e3977bed8134a"
 
 portfinder@^1.0.26:
   version "1.0.28"
