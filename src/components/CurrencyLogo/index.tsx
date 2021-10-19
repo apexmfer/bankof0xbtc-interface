@@ -1,16 +1,47 @@
 import { Currency } from '@uniswap/sdk-core'
+import { SupportedChainId } from 'constants/chains'
 import React, { useMemo } from 'react'
 import styled from 'styled-components/macro'
+
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
+
+/*
 export const getTokenLogoURL = (address: string) => {
   if (address == '0x216d7636b791Ed93BFD56BF696b35A14115416ab') {
     return 'https://gateway.pinata.cloud/ipfs/QmPL3vdJvf6QD9JRe5krkWC8WcJ19B9Hbnxpd7wc3umVxB'
   }
   return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
+
+*/
+
+type Network = 'ethereum' | 'arbitrum' | 'optimism'
+
+function chainIdToNetworkName(networkId: SupportedChainId): Network {
+  switch (networkId) {
+    case SupportedChainId.MAINNET:
+      return 'ethereum'
+    case SupportedChainId.ARBITRUM_ONE:
+      return 'arbitrum'
+    case SupportedChainId.OPTIMISM:
+      return 'optimism'
+    default:
+      return 'ethereum'
+  }
+}
+
+export const getTokenLogoURL = (
+  address: string,
+  chainId: SupportedChainId = SupportedChainId.MAINNET
+): string | void => {
+  const networkName = chainIdToNetworkName(chainId)
+  const networksWithUrls = [SupportedChainId.ARBITRUM_ONE, SupportedChainId.MAINNET, SupportedChainId.OPTIMISM]
+  if (networksWithUrls.includes(chainId)) {
+    return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
+  }
 }
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
@@ -34,7 +65,7 @@ export default function CurrencyLogo({
   style,
   ...rest
 }: {
-  currency?: Currency
+  currency?: Currency | null
   size?: string
   style?: React.CSSProperties
 }) {
@@ -44,7 +75,11 @@ export default function CurrencyLogo({
     if (!currency || currency.isNative) return []
 
     if (currency.isToken) {
-      const defaultUrls = currency.chainId === 1 ? [getTokenLogoURL(currency.address)] : []
+      const defaultUrls = []
+      const url = getTokenLogoURL(currency.address, currency.chainId)
+      if (url) {
+        defaultUrls.push(url)
+      }
       if (currency instanceof WrappedTokenInfo) {
         return [...uriLocations, ...defaultUrls]
       }
@@ -54,7 +89,7 @@ export default function CurrencyLogo({
   }, [currency, uriLocations])
 
   if (currency?.isNative) {
-    return <StyledEthereumLogo src={EthereumLogo} size={size} style={style} {...rest} />
+    return <StyledEthereumLogo src={EthereumLogo} alt="ethereum logo" size={size} style={style} {...rest} />
   }
 
   return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} {...rest} />

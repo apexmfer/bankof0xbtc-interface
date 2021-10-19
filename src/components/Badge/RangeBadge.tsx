@@ -1,11 +1,9 @@
-import React from 'react'
-
+import { Trans } from '@lingui/macro'
 import Badge, { BadgeVariant } from 'components/Badge'
+import { AlertCircle } from 'react-feather'
 import styled from 'styled-components/macro'
 
 import { MouseoverTooltip } from '../../components/Tooltip'
-import { Trans } from '@lingui/macro'
-import { AlertCircle } from 'react-feather'
 
 const BadgeWrapper = styled.div`
   font-size: 14px;
@@ -24,13 +22,6 @@ const ActiveDot = styled.span`
   height: 8px;
   width: 8px;
   margin-right: 4px;
-`
-
-export const DarkBadge = styled.div`
-  width: fit-content;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.bg0};
-  padding: 4px 6px;
 `
 
 export default function RangeBadge({

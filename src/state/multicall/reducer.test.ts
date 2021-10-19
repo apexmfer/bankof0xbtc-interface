@@ -1,3 +1,5 @@
+import { createStore, Store } from '@reduxjs/toolkit'
+
 import {
   addMulticallListeners,
   errorFetchingMulticallResults,
@@ -6,7 +8,6 @@ import {
   updateMulticallResults,
 } from './actions'
 import reducer, { MulticallState } from './reducer'
-import { Store, createStore } from '@reduxjs/toolkit'
 
 const DAI_ADDRESS = '0x6b175474e89094c44da98b954eedeac495271d0f'
 
@@ -32,6 +33,7 @@ describe('multicall reducer', () => {
               callData: '0x',
             },
           ],
+          options: { blocksPerFetch: 1 },
         })
       )
       expect(store.getState()).toEqual({
@@ -58,6 +60,7 @@ describe('multicall reducer', () => {
             },
           ],
           chainId: 1,
+          options: { blocksPerFetch: 1 },
         })
       )
       expect(store.getState()).toEqual({ callResults: {}, callListeners: {} })
@@ -72,6 +75,7 @@ describe('multicall reducer', () => {
               callData: '0x',
             },
           ],
+          options: { blocksPerFetch: 1 },
         })
       )
       store.dispatch(
@@ -83,6 +87,7 @@ describe('multicall reducer', () => {
             },
           ],
           chainId: 1,
+          options: { blocksPerFetch: 1 },
         })
       )
       expect(store.getState()).toEqual({
