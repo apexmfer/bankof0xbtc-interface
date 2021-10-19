@@ -3,17 +3,17 @@ import { ProposalState } from '../../state/governance/hooks'
 
 const handleColorType = (status: ProposalState, theme: DefaultTheme) => {
   switch (status) {
-    case ProposalState.Pending:
-    case ProposalState.Active:
+    case ProposalState.PENDING:
+    case ProposalState.ACTIVE:
       return theme.blue1
-    case ProposalState.Succeeded:
-    case ProposalState.Executed:
+    case ProposalState.SUCCEEDED:
+    case ProposalState.EXECUTED:
       return theme.green1
-    case ProposalState.Defeated:
+    case ProposalState.DEFEATED:
       return theme.red1
-    case ProposalState.Queued:
-    case ProposalState.Canceled:
-    case ProposalState.Expired:
+    case ProposalState.QUEUED:
+    case ProposalState.CANCELED:
+    case ProposalState.EXPIRED:
     default:
       return theme.text3
   }

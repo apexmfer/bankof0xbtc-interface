@@ -1,7 +1,6 @@
 // used to mark unsupported tokens, these are hosted lists of unsupported tokens
 
 const BIRB_LIST = 'https://gateway.pinata.cloud/ipfs/QmUzqasKre5PMe2gAvnzy7dPSkbckF9wFf4dU9z1GfMWJb'
- 
 const AAVE_LIST = 'tokenlist.aave.eth'
 const BA_LIST = 'https://raw.githubusercontent.com/The-Blockchain-Association/sec-notice-list/master/ba-sec-list.json'
 const CMC_ALL_LIST = 'defi.cmc.eth'
@@ -33,7 +32,7 @@ const DEFAULT_LIST_OF_LISTS_TO_DISPLAY: string[] = [
   ARBITRUM_LIST,
   OPTIMISM_LIST,
   GEMINI_LIST,
-  BIRB_LIST
+  BIRB_LIST,
 ]
 
 export const DEFAULT_LIST_OF_LISTS: string[] = [

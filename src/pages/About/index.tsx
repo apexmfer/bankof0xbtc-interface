@@ -1,21 +1,22 @@
-import React from 'react'
-import { AutoColumn } from '../../components/Column'
-import styled from 'styled-components/macro'
-import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
-import { UNI } from '../../constants/tokens'
-import { ExternalLink, TYPE } from '../../theme'
-import { RowBetween } from '../../components/Row'
-import { CardBGImage, CardNoise, CardSection, DataCard } from '../../components/earn/styled'
-import { useUserDelegatee } from '../../state/governance/hooks'
-import DelegateModal from '../../components/vote/DelegateModal'
-import { useTokenBalance } from '../../state/wallet/hooks'
-import { useActiveWeb3React } from '../../hooks/web3'
-import { ZERO_ADDRESS } from '../../constants/misc'
-import { Token, CurrencyAmount } from '@uniswap/sdk-core'
-import JSBI from 'jsbi'
-import { useModalOpen, useToggleDelegateModal } from '../../state/application/hooks'
-import { ApplicationModal } from '../../state/application/actions'
 import { Trans } from '@lingui/macro'
+import { CurrencyAmount, Token } from '@uniswap/sdk-core'
+import JSBI from 'jsbi'
+import React from 'react'
+import styled from 'styled-components/macro'
+
+import { AutoColumn } from '../../components/Column'
+import { CardBGImage, CardNoise, CardSection, DataCard } from '../../components/earn/styled'
+import { RowBetween } from '../../components/Row'
+import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
+import DelegateModal from '../../components/vote/DelegateModal'
+import { ZERO_ADDRESS } from '../../constants/misc'
+import { UNI } from '../../constants/tokens'
+import { useActiveWeb3React } from '../../hooks/web3'
+import { ApplicationModal } from '../../state/application/actions'
+import { useModalOpen, useToggleDelegateModal } from '../../state/application/hooks'
+import { useUserDelegatee } from '../../state/governance/hooks'
+import { useTokenBalance } from '../../state/wallet/hooks'
+import { ExternalLink, TYPE } from '../../theme'
 
 const PageWrapper = styled(AutoColumn)``
 
@@ -63,25 +64,24 @@ export default function Vote() {
               <AutoColumn gap="md">
                 <RowBetween>
                   <TYPE.white fontWeight={600}>
-                    <Trans>About Birbswap</Trans>
+                    <Trans>About Bank of 0xBitcoin</Trans>
                   </TYPE.white>
                 </RowBetween>
                 <RowBetween>
                   <TYPE.white fontSize={14}>
                     <Trans>
-                      Birbswap is an alternative frontend for UniswapV3 which prioritizes decentralized cryptocurrencies
-                      as bases and for routing. Central banks have no place in the Ethereum Network and we will help
-                      slowly phase them out of the space together with Birbswap.
+                      Bank of 0xBTC is an alternative frontend for UniswapV3 which prioritizes decentralized
+                      cryptocurrency as base pairs.
                     </Trans>
                   </TYPE.white>
                 </RowBetween>
                 <ExternalLink
                   style={{ color: 'white', textDecoration: 'underline' }}
-                  href="https://birbtoken.com"
+                  href="https://0xbitcoin.org"
                   target="_blank"
                 >
                   <TYPE.white fontSize={14}>
-                    <Trans>Read more about Birb</Trans>
+                    <Trans>Read more about 0xBTC</Trans>
                   </TYPE.white>
                 </ExternalLink>
               </AutoColumn>

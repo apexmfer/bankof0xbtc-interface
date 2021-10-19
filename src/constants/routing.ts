@@ -21,10 +21,10 @@ import {
   USDT_ARBITRUM_ONE,
   USDT_OPTIMISM,
   WBTC,
-  ZXBTC,  
-  ZXBTC_OPTIMISM,
-  ZXBTC_ARBITRUM_ONE,
   WETH9_EXTENDED,
+  ZXBTC,
+  ZXBTC_ARBITRUM_ONE,
+  ZXBTC_OPTIMISM,
 } from './tokens'
 
 type ChainTokenList = {
@@ -42,7 +42,7 @@ const WETH_ONLY: ChainTokenList = Object.fromEntries(
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
- // [1]: [...WETH_ONLY[1], DAI, USDC, USDT, WBTC, ZXBTC, BIRB],
+  // [1]: [...WETH_ONLY[1], DAI, USDC, USDT, WBTC, ZXBTC, BIRB],
   [SupportedChainId.MAINNET]: [...WETH_ONLY[SupportedChainId.MAINNET], DAI, USDC, USDT, ZXBTC],
   [SupportedChainId.OPTIMISM]: [...WETH_ONLY[SupportedChainId.OPTIMISM], DAI_OPTIMISM, USDT_OPTIMISM, ZXBTC_OPTIMISM],
   [SupportedChainId.ARBITRUM_ONE]: [
@@ -59,7 +59,7 @@ export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: To
     [TRIBE.address]: [FEI],
     [FRAX.address]: [FXS],
     [FXS.address]: [FRAX],
-    [WBTC.address]: [renBTC], 
+    [WBTC.address]: [renBTC],
     [renBTC.address]: [WBTC],
   },
 }
@@ -77,7 +77,6 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainCurrencyList = {
- 
   [SupportedChainId.MAINNET]: [
     ExtendedEther.onChain(SupportedChainId.MAINNET),
     DAI,
@@ -136,6 +135,6 @@ export const PINNED_PAIRS: { readonly [chainId: number]: [Token, Token][] } = {
       ),
     ],
     [USDC, USDT],
-    [DAI, USDT], 
+    [DAI, USDT],
   ],
 }
