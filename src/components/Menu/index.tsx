@@ -132,7 +132,6 @@ const InternalMenuItem = styled(Link)`
   }
 `
 
-
 const InternalLinkMenuItem = styled(InternalMenuItem)`
   display: flex;
   flex-direction: row;
@@ -170,7 +169,6 @@ const ToggleMenuItem = styled.button`
 
 //const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
 const CODE_LINK = 'https://github.com/admazzola/bankof0xbtc-interface'
-
 
 function LanguageMenuItem({ locale, active, key }: { locale: SupportedLocale; active: boolean; key: string }) {
   const { to, onClick } = useLocationLinkProps(locale)

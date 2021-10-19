@@ -8,7 +8,6 @@ import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
-
 /*
 export const getTokenLogoURL = (address: string) => {
   if (address == '0x216d7636b791Ed93BFD56BF696b35A14115416ab') {
